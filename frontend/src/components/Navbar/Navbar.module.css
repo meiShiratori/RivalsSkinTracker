@@ -1,0 +1,121 @@
+.nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 4em;
+  padding: 0 2em;
+  background-color: var(--color-nav);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.navLinksWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.navLinksLeft,
+.navLinksRight {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.navLinks a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: clamp(var(--font-sm), 2vw, 1.25em);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.navLinksLeft a::after {
+  content: '/';
+  color: #555;
+  margin-left: 1em;
+  font-size: 1.3em;
+  vertical-align: middle;
+}
+
+.navLinksLeft a:last-child::after {
+  content: '';
+}
+
+.navLinks a:hover {
+  color: white;
+}
+
+.darkToggleBtn {
+  background: none;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  padding: 0.4em 0.7em;
+  border-radius: 0.4em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.darkToggleBtn:hover {
+  background-color: var(--color-accent);
+  color: black;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: var(--color-text);
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 0.6em;
+    right: 1em;
+  }
+
+  .navLinksWrapper {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-nav);
+    position: absolute;
+    top: 4em;
+    left: 0;
+    width: 100%;
+    padding: 1em 2em;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    z-index: 4;
+  }
+
+  .navLinksWrapper.show {
+    display: flex;
+  }
+
+  .navLinksLeft,
+  .navLinksRight {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+  }
+
+  .navLinksRight {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1em;
+    padding-top: 1em;
+  }
+
+  .navLinksLeft a::after {
+    content: '';
+  }
+}

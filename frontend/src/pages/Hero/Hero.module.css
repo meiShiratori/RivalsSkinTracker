@@ -1,0 +1,143 @@
+.heroPage {
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: 5em 2em;
+}
+
+.heroLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.skinDisplay {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.selectedSkinImg {
+  max-width: 100%;
+  max-height: 550px;
+  object-fit: contain;
+  border-radius: 0.5em;
+}
+
+.skinInfo {
+  text-align: center;
+}
+
+.skinLabel {
+  font-size: 2em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-family: var(--font-main);
+  margin-bottom: 0.5em;
+}
+
+.addSkinButton {
+  padding: 0.8em 1.6em;
+  font-size: 1em;
+  font-family: var(--font-main);
+  background-color: var(--color-accent);
+  color: #000;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.addSkinButton:hover {
+  background-color: #ffde4a;
+}
+
+.skinThumbnails {
+  width: 100%;
+  max-width: 900px;
+  max-height: none;
+  overflow-y: visible;
+}
+
+.skinGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.8em;
+  padding: 1em 0;
+  justify-items: center;
+}
+
+.skinThumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.5em;
+  border-radius: 0.5em;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.skinThumb:hover {
+  transform: scale(1.05);
+  border-color: var(--color-accent);
+}
+
+.selected {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .skinGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6em;
+  }
+
+  .skinThumb {
+    padding: 0.3em;
+    border-radius: 0.4em;
+  }
+
+  .selectedSkinImg {
+    max-height: 60vh;
+  }
+
+  .skinLabel {
+    font-size: 1.4em;
+    padding: 0 1em;
+  }
+
+  .addSkinButton {
+    width: 100%;
+    max-width: 20em;
+    padding: 0.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .skinGrid {
+    grid-template-columns: repeat(4, 1fr); /* More columns = smaller items */
+    gap: 0.4em;
+  }
+
+  .skinThumb {
+    padding: 0.2em;
+    border-radius: 0.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .skinGrid {
+    grid-template-columns: repeat(5, 1fr); /* Tightest layout */
+  }
+}
+

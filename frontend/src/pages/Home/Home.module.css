@@ -1,0 +1,126 @@
+.heroContainer {
+  position: relative;
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/background-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+.featuredSkins {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  padding: 6em 2em;
+  flex-wrap: wrap;
+  z-index: 1;
+  position: relative;
+}
+
+.miniGalleryCarousel {
+  background: var(--color-blue-bg);
+  padding: 5em 2em;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.miniGalleryCarousel h2 {
+  color: var(--color-accent);
+  font-size: var(--font-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5em;
+  text-align: left;
+  padding-left: 2em;
+}
+
+.carouselWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 2em;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1em 2em;
+}
+
+.carouselTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollBtn {
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--color-accent);
+  border: none;
+  font-size: 2em;
+  padding: 0.5em 0.75em;
+  cursor: pointer;
+  z-index: 2;
+  transition: background var(--transition-fast);
+}
+
+.scrollBtn:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.left {
+  position: absolute;
+  left: 0;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .carouselWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .carouselTrack {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+    overflow: visible;
+    padding: 0 1em;
+  }
+
+  .carouselTrack > * {
+    width: 100%;
+  }
+
+  .scrollBtn {
+    display: none;
+  }
+
+  .miniGalleryCarousel {
+    padding: 3em 1em;
+  }
+
+  .miniGalleryCarousel h2 {
+    font-size: var(--font-md);
+    text-align: center;
+    padding-left: 0;
+  }
+}
+

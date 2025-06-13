@@ -1,0 +1,7 @@
+nohup: ignoring input
+
+> backend@1.0.0 start
+> node server.js
+
+MongoDB connected
+Server running on port 3000

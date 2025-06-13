@@ -15,8 +15,8 @@ function Profile() {
   useEffect(() => {
     const isPublic = !!queryUser;
     const url = isPublic
-      ? `http://localhost:3001/profile/public/${encodeURIComponent(queryUser)}`
-      : `http://localhost:3001/profile`;
+      ? `/profile/public/${encodeURIComponent(queryUser)}`
+      : `/profile`;
 
     fetch(url, {
       headers: isPublic ? {} : { Authorization: `Bearer ${token}` }

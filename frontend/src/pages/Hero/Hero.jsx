@@ -31,7 +31,7 @@ function Hero() {
     }
 
     try {
-      const res = await fetch('http://localhost:3001/profile/me/add', {
+      const res = await fetch('/profile/me/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

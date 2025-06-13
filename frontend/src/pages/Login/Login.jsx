@@ -11,7 +11,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:3001/auth/login', {
+      const res = await fetch('/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -22,6 +22,7 @@ function Login() {
       if (res.ok) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('username', username);
+	window.dispatchEvent(new Event('storage'));
         navigate('/profile');
       } else {
         alert(data.error || "Login failed");

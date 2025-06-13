@@ -11,7 +11,7 @@ function Friends() {
   useEffect(() => {
     if (!token) return;
 
-    fetch('http://localhost:3001/friends', {
+    fetch('/friends', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -26,7 +26,7 @@ function Friends() {
   useEffect(() => {
     if (!token) return;
 
-    fetch('http://localhost:3001/auth/users', {
+    fetch('/auth/users', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -39,7 +39,7 @@ function Friends() {
   }, [token]);
 
   const handleAdd = (name) => {
-    fetch('http://localhost:3001/friends/add', {
+    fetch('/friends/add', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
